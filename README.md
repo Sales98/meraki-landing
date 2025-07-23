@@ -15,7 +15,7 @@ Esta é a landing page da **Meraki Clinic Spa**, desenvolvida como projeto front
 
 1. Clone este repositório:  
    ```bash
-   git clone https://github.com/teu-usuario/meraki-landing.git
+   git clone https://github.com/Sales98/meraki-landing.git
    cd meraki-landing
 Abra index.html no navegador ou faça deploy em Netlify/Vercel.
 
