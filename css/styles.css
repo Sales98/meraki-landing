@@ -95,7 +95,7 @@
   border-radius: 8px;
 }
 
-/* Responsividade para tablet e mobile */
+
 @media (max-width: 992px) {
   .hero__content {
     flex-direction: column-reverse;
@@ -165,7 +165,7 @@
   margin-bottom: 1rem;
 }
 
-/* Tablet: até 992px */
+
 @media (max-width: 992px) {
   .about__content {
     flex-direction: column;
@@ -173,9 +173,88 @@
   }
 }
 
-/* Mobile pequeno: até 576px — já definiste antes */
+
 @media (max-width: 576px) {
+  .about {
+    padding: 2rem 0;             
+  }
   .about__content {
-    /* Se quiseres, podes ajustar paddings/fontes adicionais aqui */
+    gap: 1rem;                   
+  }
+  .about__image,
+  .about__text {
+    min-width: 100%;            
+  }
+  .about__text h2 {
+    font-size: 1.5rem;           
+  }
+  .about__text p {
+    font-size: 0.9rem;           
+    line-height: 1.5;
   }
 }
+/* Services Section */
+.services {
+  background-color: #f9f9f9;
+  padding: 4rem 0;
+}
+
+.services .section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #1e1e1e;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.service-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  margin: 1rem;
+  color: #333;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  margin: 0 1rem 1.5rem;
+  color: #555;
+}
+
+@media (max-width: 992px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .services {
+    padding: 2rem 0;
+  }
+  .service-card img {
+    height: 150px;
+  }
+}
+
