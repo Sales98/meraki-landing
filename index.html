@@ -136,10 +136,11 @@
     <div class="contact__content">
       <h2>Marcar Consulta</h2>
       <p>Preencha o formulário abaixo e entraremos em contacto o mais breve possível.</p>
-      <form class="contact__form">
-        <input type="text" placeholder="Nome" required />
-        <input type="email" placeholder="Email" required />
-        <textarea placeholder="Mensagem" required></textarea>
+      <form class="contact__form" action="https://formspree.io/f/mqaldbwl" method="POST">
+        <input type="text" name="nome" placeholder="Nome" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="text" name="honeypot" tabindex="-1" autocomplete="off" style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">
+        <textarea placeholder="Mensagem" name="mensagem" required></textarea>
         <button type="submit" class="btn">Enviar</button>
       </form>
     </div>
