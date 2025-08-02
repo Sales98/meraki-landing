@@ -1,23 +1,23 @@
 /* === BASE (sem media-queries) === */
 /* 1. Variáveis globais */
 :root {
-  --primary-color: #E0F7FA;
-  --primary-dark: #B0DFE8;
-  --accent-color: #FFD700;
+  --primary-color: #63e1f2;
+  --primary-dark: #3cb9d2;
+  --accent-color: #debe06;           /* dourado normal */
+  --accent-hover-color: #f7d201;     /* dourado mais escuro para hover */
   --color-footer-bg: #1A1F24;
   --color-footer-text: #f5f5f5;
   --color-footer-muted: #bbb;
   --font-sans: 'Poppins', sans-serif;
   --font-serif: 'Playfair Display', serif;
+  --transition-speed: 0.3s;
 }
-
+/* 2. Reset e tipografia base */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-
-/* 2. Reset e tipografia base */
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -35,7 +35,7 @@ body {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 .btn--primary {
   background-color: var(--primary-color);
@@ -43,6 +43,7 @@ body {
 }
 .btn--primary:hover {
   background-color: var(--primary-dark);
+  color: var(--accent-hover-color);
 }
 
 /* 4. Header & Nav */
@@ -87,41 +88,28 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
   color: #333;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
-/* hover geral */
-.btn--nav:hover,
-.btn--nav:focus {
+.btn--nav:hover {
   background-color: var(--primary-color);
   color: #fff;
 }
-/* remover hover apenas no logo */
-.nav__logo-item .btn--nav:hover {
-  background-color: transparent;
-}
-/* ⬇️ Cole isto AQUI ⬇️ */
+
+/* Garante que o botão do logo NUNCA receba fundo */
 .nav__logo-item .btn--nav,
 .nav__logo-item .btn--nav:hover,
-.nav__logo-item .btn--nav:focus,
-.nav__logo-item .btn--nav.active,
-.nav__logo-item .btn--nav.active:hover,
-.nav__logo-item .btn--nav.active:focus {
+.nav__logo-item .btn--nav:focus {
   background-color: transparent !important;
   color: inherit !important;
 }
-/* estado active (scroll–spy): só muda cor do texto */
-.nav__list a.active {
-  color: var(--accent-color);
-  font-weight: 600;
-  background-color: transparent;
-}
-/* reforço caso use .active no botão */
+
+/* O estado “ativo” (scroll-spy) só muda cor do texto, nunca adiciona fundo */
 .btn--nav.active,
-.btn--nav:focus.active {
-  background-color: transparent;
-  color: var(--accent-color);
+.btn--nav.active:hover,
+.btn--nav.active:focus {
+  background-color: transparent !important;
+  color: var(--accent-color) !important;
 }
 
 /* logo responsiva */
@@ -130,6 +118,7 @@ body {
   width: auto;
 }
 
+/* toggle para mobile */
 .btn--toggle {
   display: none;
 }
@@ -348,10 +337,11 @@ body {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background var(--transition-speed), color var(--transition-speed);
 }
 .contact__form button:hover {
   background-color: var(--primary-dark);
+  color: var(--accent-hover-color);
 }
 .contact__image {
   flex: 1;
@@ -399,7 +389,7 @@ body {
 .footer__links ul li a {
   color: var(--color-footer-muted);
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color var(--transition-speed);
 }
 .footer__links ul li a:hover {
   color: var(--primary-color);
@@ -408,7 +398,7 @@ body {
   margin-right: 15px;
   font-size: 1.2rem;
   color: var(--color-footer-muted);
-  transition: color 0.3s;
+  transition: color var(--transition-speed);
 }
 .footer__socials .footer__icons a:hover {
   color: var(--primary-color);
@@ -476,7 +466,6 @@ body {
 
 /* Até 576px (mobiles em retrato) */
 @media (max-width: 576px) {
-  /* menu móvel */
   .btn--toggle { display: block; }
   .nav__list {
     display: none;
@@ -487,11 +476,9 @@ body {
   .nav__list li { margin-bottom: 0.5rem; }
   .btn--nav { display: block; width: 100%; }
 
-  /* Hero */
   .hero { min-height: auto; padding: 2rem 0; }
   .hero__text { padding: 0 1rem; }
 
-  /* About */
   .about { padding: 2rem 0; }
   .about__content { gap: 1rem; }
   .about__image,
@@ -499,19 +486,15 @@ body {
   .about__text h2 { font-size: 1.5rem; }
   .about__text p  { font-size: 0.9rem; line-height: 1.5; }
 
-  /* Services */
   .services { padding: 2rem 0; }
   .service-card img { height: 150px; }
 
-  /* Testimonials */
   .testimonial-card__text    { font-size: 0.95rem; }
   .testimonial-card__author span { font-size: 0.9rem; }
 
-  /* Contact */
   .contact__content h2      { font-size: 1.6rem; }
   .contact__form button     { font-size: 0.95rem; }
 
-  /* Footer */
   .footer { padding-top: 80px; }
   .footer__socials .footer__icons a { font-size: 1rem; }
 }
