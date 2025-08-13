@@ -119,3 +119,12 @@ form.addEventListener("submit", async (e) => {
     submitBtn.textContent = "Enviar";
   }
 });
+
+document.querySelectorAll('.nav__list a').forEach(a => {
+  a.addEventListener('click', () => {
+    if (window.matchMedia('(max-width: 576px)').matches) {
+      document.querySelector('.nav__list')?.classList.remove('nav--open');
+    }
+  });
+});
+
