@@ -1,10 +1,8 @@
-/* === BASE (sem media-queries) === */
-/* 1. Variáveis globais */
 :root {
   --primary-color: #63e1f2;
   --primary-dark: #3cb9d2;
-  --accent-color: #debe06;           /* dourado normal */
-  --accent-hover-color: #f7d201;     /* dourado mais escuro para hover */
+  --accent-color: #debe06;
+  --accent-hover-color: #f7d201;
   --color-footer-bg: #1A1F24;
   --color-footer-text: #f5f5f5;
   --color-footer-muted: #bbb;
@@ -12,12 +10,13 @@
   --font-serif: 'Playfair Display', serif;
   --transition-speed: 0.3s;
 }
-/* 2. Reset e tipografia base */
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -25,7 +24,7 @@ body {
   color: #333;
 }
 
-/* 3. Botões genéricos */
+
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -37,16 +36,17 @@ body {
   cursor: pointer;
   transition: background-color var(--transition-speed), color var(--transition-speed);
 }
+
 .btn--primary {
   background-color: var(--primary-color);
   color: #fff;
 }
+
 .btn--primary:hover {
   background-color: var(--primary-dark);
   color: var(--accent-hover-color);
 }
 
-/* 4. Header & Nav */
 .header {
   display: flex;
   align-items: center;
@@ -58,13 +58,13 @@ body {
   z-index: 100;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
-
-/* Nav-list como grid: 0.5fr para logo + 4 x 1fr para links */
+/* Nav */
 .nav__list {
   display: grid;
   grid-template-columns: 0.5fr repeat(4, 1fr);
@@ -75,11 +75,11 @@ body {
   padding: 0;
   list-style: none;
 }
+
 .nav__item {
   display: flex;
 }
 
-/* Botões do nav ocupam todo o espaço do li */
 .btn--nav {
   flex: 1;
   height: 100%;
@@ -89,14 +89,14 @@ body {
   align-items: center;
   justify-content: center;
   color: #333;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
 }
+
 .btn--nav:hover {
   background-color: var(--primary-color);
   color: #fff;
 }
 
-/* Garante que o botão do logo NUNCA receba fundo */
 .nav__logo-item .btn--nav,
 .nav__logo-item .btn--nav:hover,
 .nav__logo-item .btn--nav:focus {
@@ -104,7 +104,6 @@ body {
   color: inherit !important;
 }
 
-/* O estado “ativo” (scroll-spy) só muda cor do texto, nunca adiciona fundo */
 .btn--nav.active,
 .btn--nav.active:hover,
 .btn--nav.active:focus {
@@ -112,18 +111,15 @@ body {
   color: var(--accent-color) !important;
 }
 
-/* logo responsiva */
 .nav__logo-img {
   max-height: 40px;
   width: auto;
 }
 
-/* toggle para mobile */
 .btn--toggle {
   display: none;
 }
-
-/* 5. Hero Section */
+/* Hero */
 .hero {
   min-height: calc(100vh - 80px);
   display: flex;
@@ -131,6 +127,7 @@ body {
   background: var(--primary-color) url('../assets/images/hero-bg.jpg') center/cover no-repeat;
   color: #333;
 }
+
 .hero__content {
   display: flex;
   align-items: center;
@@ -139,40 +136,46 @@ body {
   width: 100%;
   padding: 2rem 1rem;
 }
+
 .hero__text {
   flex: 1;
   max-width: 600px;
 }
+
 .hero__text h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
+
 .hero__text h2 {
   font-size: 1.75rem;
   margin-bottom: 1rem;
   color: #555;
 }
+
 .hero__text p {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
+
 .hero__image {
   flex: 1;
   display: flex;
   justify-content: center;
 }
+
 .hero__image img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
 }
-
-/* 6. About Section */
+/* About */
 .about {
   background-color: #fff;
   padding: 4rem 0;
 }
+
 .about__content {
   display: flex;
   align-items: center;
@@ -180,125 +183,138 @@ body {
   gap: 2rem;
   flex-wrap: wrap;
 }
-.about__image {
+
+.about__image,
+.about__text {
   flex: 1;
   min-width: 280px;
 }
+
 .about__image img {
   width: 100%;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-.about__text {
-  flex: 1;
-  min-width: 280px;
-}
+
 .about__text h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: #1e1e1e;
 }
+
 .about__text p {
   font-size: 1rem;
   line-height: 1.6;
   color: #555;
   margin-bottom: 1rem;
 }
-
-/* 7. Services Section */
+/* Services */
 .services {
   background-color: #f9f9f9;
   padding: 4rem 0;
 }
+
 .services .section-title {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
   color: #1e1e1e;
 }
+
 .services__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
+
 .service-card {
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
+
 .service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
+
 .service-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
 }
+
 .service-card h3 {
   font-size: 1.25rem;
   margin: 1rem;
   color: #333;
 }
+
 .service-card p {
   font-size: 0.95rem;
   margin: 0 1rem 1.5rem;
   color: #555;
 }
-
-/* 8. Testimonials Section */
+/* Testimonials */
 .testimonials {
   background-color: #f9f9f9;
   padding: 80px 0;
   text-align: center;
 }
+
 .testimonials__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 40px;
 }
+
 .testimonial-card {
   background-color: #fff;
   padding: 30px 20px;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  transition: transform var(--transition-speed);
 }
+
 .testimonial-card:hover {
   transform: translateY(-5px);
 }
+
 .testimonial-card__text {
   font-style: italic;
   font-size: 1rem;
   margin-bottom: 20px;
   color: #444;
 }
+
 .testimonial-card__author {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
+
 .testimonial-card__author img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
+
 .testimonial-card__author span {
   font-weight: 600;
   font-size: 0.95rem;
   color: #333;
 }
-
-/* 9. Contact Section */
+/* Contact */
 .contact {
   padding: 80px 0;
   background-color: #fefefe;
 }
+
 .contact__container {
   display: flex;
   align-items: center;
@@ -306,22 +322,27 @@ body {
   gap: 50px;
   flex-wrap: wrap;
 }
+
 .contact__content {
   flex: 1;
 }
+
 .contact__content h2 {
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
+
 .contact__content p {
   margin-bottom: 20px;
   color: #444;
 }
+
 .contact__form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
+
 .contact__form input,
 .contact__form textarea {
   padding: 12px;
@@ -330,6 +351,7 @@ body {
   border-radius: 6px;
   resize: none;
 }
+
 .contact__form button {
   padding: 12px;
   background-color: var(--primary-color);
@@ -339,25 +361,58 @@ body {
   cursor: pointer;
   transition: background var(--transition-speed), color var(--transition-speed);
 }
+
 .contact__form button:hover {
   background-color: var(--primary-dark);
   color: var(--accent-hover-color);
 }
+
 .contact__image {
   flex: 1;
 }
+
 .contact__image img {
   width: 100%;
   border-radius: 10px;
 }
 
-/* 10. Footer */
+#formMessage {
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+#formMessage.success {
+  color: green;
+}
+
+#formMessage.error {
+  color: red;
+}
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Footer */
 .footer {
   background-color: var(--color-footer-bg);
   color: var(--color-footer-text);
   padding-top: 60px;
   font-size: 0.95rem;
 }
+
 .footer__container {
   display: flex;
   justify-content: space-between;
@@ -365,44 +420,54 @@ body {
   gap: 40px;
   padding-bottom: 40px;
 }
+
 .footer__logo h3 {
   font-family: var(--font-serif);
   color: var(--accent-color);
   font-size: 1.8rem;
   margin-bottom: 10px;
 }
+
 .footer__logo p {
   color: var(--color-footer-muted);
 }
+
 .footer__links h4,
 .footer__socials h4 {
   font-size: 1.2rem;
   margin-bottom: 15px;
 }
+
 .footer__links ul {
   list-style: none;
   padding: 0;
 }
+
 .footer__links ul li {
   margin-bottom: 10px;
 }
+
 .footer__links ul li a {
   color: var(--color-footer-muted);
   text-decoration: none;
   transition: color var(--transition-speed);
 }
+
 .footer__links ul li a:hover {
   color: var(--primary-color);
 }
+
 .footer__socials .footer__icons a {
   margin-right: 15px;
   font-size: 1.2rem;
   color: var(--color-footer-muted);
   transition: color var(--transition-speed);
 }
+
 .footer__socials .footer__icons a:hover {
   color: var(--primary-color);
 }
+
 .footer__bottom {
   text-align: center;
   padding: 20px;
@@ -410,10 +475,8 @@ body {
   font-size: 0.9rem;
   color: var(--color-footer-muted);
 }
+/* Media Queries */
 
-/* === MEDIA QUERIES AGRUPADAS === */
-
-/* Até 992px (laptops menores / tablets em paisagem) */
 @media (max-width: 992px) {
   .hero__content { flex-direction: column-reverse; text-align: center; }
   .hero__text h1 { font-size: 2rem; }
@@ -426,16 +489,9 @@ body {
   .testimonials__grid { grid-template-columns: repeat(2, 1fr); }
 
   .contact__container { flex-direction: column; }
-
-  .footer__container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .footer__socials .footer__icons a { margin-right: 10px; }
+  .footer__container { flex-direction: column; align-items: center; text-align: center; }
 }
 
-/* Até 768px (tablets / mobiles em paisagem) */
 @media (max-width: 768px) {
   .hero__text h1 { font-size: 2rem; }
   .hero__text p  { font-size: 1rem; }
@@ -445,11 +501,9 @@ body {
   .about__text p  { font-size: 0.95rem; }
 
   .services__grid { grid-template-columns: 1fr; }
-  .service-card {
-    padding: 25px 20px;
-  }
-  .service-card h3  { font-size: 1.1rem; }
-  .service-card p   { font-size: 0.95rem; }
+  .service-card { padding: 25px 20px; }
+  .service-card h3 { font-size: 1.1rem; }
+  .service-card p  { font-size: 0.95rem; }
 
   .testimonials__grid { grid-template-columns: 1fr; }
   .testimonial-card { padding: 25px 15px; }
@@ -464,14 +518,9 @@ body {
   .footer__socials h4 { font-size: 1rem; }
 }
 
-/* Até 576px (mobiles em retrato) */
 @media (max-width: 576px) {
   .btn--toggle { display: block; }
-  .nav__list {
-    display: none;
-    flex-direction: column;
-    gap: 1rem;
-  }
+  .nav__list { display: none; flex-direction: column; gap: 1rem; }
   .nav__list.nav--open { display: flex; }
   .nav__list li { margin-bottom: 0.5rem; }
   .btn--nav { display: block; width: 100%; }
@@ -489,12 +538,14 @@ body {
   .services { padding: 2rem 0; }
   .service-card img { height: 150px; }
 
-  .testimonial-card__text    { font-size: 0.95rem; }
+  .testimonial-card__text { font-size: 0.95rem; }
   .testimonial-card__author span { font-size: 0.9rem; }
 
-  .contact__content h2      { font-size: 1.6rem; }
-  .contact__form button     { font-size: 0.95rem; }
+  .contact { padding: 2rem 0; }
+  .contact__image,
+  .contact__content { min-width: 100%; }
+  .contact__content h2 { font-size: 1.6rem; }
+  .contact__form button { font-size: 0.95rem; }
 
   .footer { padding-top: 80px; }
-  .footer__socials .footer__icons a { font-size: 1rem; }
 }

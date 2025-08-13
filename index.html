@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta 
-    name="description" 
-    content="Meraki Clinic Spa: tratamentos estéticos personalizados com técnica e cuidado humano. Marque sua consulta e realce sua beleza!" 
-  />
+  <meta name="description" content="Meraki Clinic Spa: tratamentos estéticos personalizados com técnica e cuidado humano. Marque sua consulta e realce sua beleza!" />
   <meta name="keywords" content="clínica estética, tratamentos estéticos, beleza, spa, Meraki" />
   <meta property="og:title" content="Meraki Clinic Spa – Beleza com Alma" />
   <meta property="og:description" content="Tratamentos estéticos personalizados com técnica e cuidado humano. Marque sua consulta!" />
@@ -21,19 +18,18 @@
   <link rel="manifest" href="assets/icons/site.webmanifest" />
   <title>Meraki Clinic Spa – Beleza com Alma e Profissionalismo</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 <header class="header">
   <div class="container">
     <nav class="nav">
       <ul class="nav__list">
-        <!-- Logo (0.5fr) -->
         <li class="nav__item nav__logo-item">
           <a href="#hero" class="btn btn--nav">
             <img src="assets/images/logo.png" alt="Meraki Clinic SPA Logo" class="nav__logo-img">
           </a>
         </li>
-        <!-- 4 secções (1fr cada) -->
         <li class="nav__item"><a href="#sobre"       class="btn btn--nav">Sobre</a></li>
         <li class="nav__item"><a href="#servicos"    class="btn btn--nav">Serviços</a></li>
         <li class="nav__item"><a href="#testemunhos" class="btn btn--nav">Testemunhos</a></li>
@@ -43,10 +39,11 @@
     <button class="btn btn--toggle" aria-label="Abrir menu móvel">☰</button>
   </div>
 </header>
+
 <section id="hero" class="hero fade-in">
   <div class="container hero__content">
     <div class="hero__text">
-      <h1>Bem‑vinda à Meraki Clinic SPA</h1>
+      <h1>Bem-vinda à Meraki Clinic SPA</h1>
       <h2>Beleza com alma e profissionalismo</h2>
       <p>Oferecemos tratamentos estéticos personalizados para realçar a sua melhor versão.</p>
       <a href="#contacto" class="btn btn--primary">Marcar Consulta</a>
@@ -56,25 +53,20 @@
     </div>
   </div>
 </section>
-  <section id="sobre" class="about fade-in">
+
+<section id="sobre" class="about fade-in">
   <div class="container about__content">
     <div class="about__image">
       <img loading="lazy" src="assets/images/about-clinic.jpg" alt="Interior da clínica Meraki">
     </div>
     <div class="about__text">
       <h2>Sobre a Meraki Clinic Spa</h2>
-      <p>
-        Na Meraki Clinic Spa, combinamos técnica e cuidado humano para oferecer
-        tratamentos estéticos personalizados. A nossa missão é realçar a sua
-        beleza única, com procedimentos seguros e inovadores.
-      </p>
-      <p>
-        Fundada em 2023, a Meraki tem vindo a transformar vidas através da
-        estética de excelência, num ambiente acolhedor e relaxante.
-      </p>
+      <p>Na Meraki Clinic Spa, combinamos técnica e cuidado humano para oferecer tratamentos estéticos personalizados. A nossa missão é realçar a sua beleza única, com procedimentos seguros e inovadores.</p>
+      <p>Fundada em 2023, a Meraki tem vindo a transformar vidas através da estética de excelência, num ambiente acolhedor e relaxante.</p>
     </div>
   </div>
 </section>
+
 <section id="servicos" class="services fade-in">
   <div class="container">
     <h2 class="section-title">Nossos Serviços</h2>
@@ -97,32 +89,27 @@
     </div>
   </div>
 </section>
+
 <section id="testemunhos" class="testimonials fade-in">
   <div class="container">
     <h2 class="section-title">O que dizem sobre nós</h2>
     <div class="testimonials__grid">
       <div class="testimonial-card">
-        <p class="testimonial-card__text">
-          “A Meraki mudou a forma como me sinto com a minha pele. Atendimento impecável!”
-        </p>
+        <p class="testimonial-card__text">“A Meraki mudou a forma como me sinto com a minha pele. Atendimento impecável!”</p>
         <div class="testimonial-card__author">
           <img loading="lazy" src="assets/images/user1.jpg" alt="Cliente 1" />
           <span>Joana S.</span>
         </div>
       </div>
       <div class="testimonial-card">
-        <p class="testimonial-card__text">
-          “Ambiente incrível e resultados visíveis desde a primeira sessão.”  
-        </p>
+        <p class="testimonial-card__text">“Ambiente incrível e resultados visíveis desde a primeira sessão.”</p>
         <div class="testimonial-card__author">
           <img loading="lazy" src="assets/images/user2.jpg" alt="Cliente 2" />
           <span>Carlos M.</span>
         </div>
       </div>
       <div class="testimonial-card">
-        <p class="testimonial-card__text">
-          “Recomendo 100% – profissionais muito atenciosos e espaço acolhedor.”  
-        </p>
+        <p class="testimonial-card__text">“Recomendo 100% – profissionais muito atenciosos e espaço acolhedor.”</p>
         <div class="testimonial-card__author">
           <img loading="lazy" src="assets/images/user3.jpg" alt="Cliente 3" />
           <span>Mariana P.</span>
@@ -131,17 +118,20 @@
     </div>
   </div>
 </section>
+
 <section class="contact section fade-in" id="contacto">
   <div class="container contact__container">
     <div class="contact__content">
       <h2>Marcar Consulta</h2>
       <p>Preencha o formulário abaixo e entraremos em contacto o mais breve possível.</p>
-      <form class="contact__form" action="https://formspree.io/f/mqaldbwl" method="POST">
+      <form id="contactForm" class="contact__form" action="https://formspree.io/f/mqaldbwl" method="POST" novalidate>
         <input type="text" name="nome" placeholder="Nome" required />
         <input type="email" name="email" placeholder="Email" required />
         <input type="text" name="honeypot" tabindex="-1" autocomplete="off" style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">
-        <textarea placeholder="Mensagem" name="mensagem" required></textarea>
-        <button type="submit" class="btn">Enviar</button>
+        <textarea name="mensagem" placeholder="Mensagem" required></textarea>
+        <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+        <button type="submit" id="submitBtn" class="btn btn--primary">Enviar<span id="loadingSpinner" class="spinner" style="display:none;"></span></button>
+        <div id="formMessage" role="alert" aria-live="assertive" style="margin-top:1rem; font-weight:600;"></div>
       </form>
     </div>
     <div class="contact__image">
@@ -149,6 +139,7 @@
     </div>
   </div>
 </section>
+
 <footer class="footer">
   <div class="container footer__container">
     <div class="footer__logo">
@@ -182,6 +173,6 @@
   </div>
 </footer>
 
-  <script src="js/main.js" defer></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>
